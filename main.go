@@ -7,6 +7,7 @@ SPDX-License-Identifier: Apache-2.0
 package main
 
 import (
+	"encoding/hex"
 	"fmt"
 	"os"
 	"time"
@@ -45,7 +46,7 @@ func main() {
 		fmt.Print(err)
 		os.Exit(-1)
 	}
-	fmt.Println("blockchain info:", bci)
+	fmt.Println("starting block height:", bci.BCI.Height)
 
 	chContext, err := clientChannelContext()
 	if err != nil {
@@ -85,24 +86,24 @@ func main() {
 				continue
 				//test.Failf(t, "unexpected closed channel while waiting for Tx Status event")
 			}
-			fmt.Printf("Received block event: %#v", event)
+			//fmt.Printf("Received block event: %#v", event)
 			if event.Block == nil {
 				continue
 			}
 
-			fmt.Println("New block created, number", event.Block.Header.Number)
+			fmt.Println("New block created, number", event.Block.Header.Number, "hash:", hex.EncodeToString(event.Block.Header.DataHash))
 		}
 	}()
 
 	go func() {
-		fmt.Println("receiving chaincode events")
+		//fmt.Println("receiving chaincode events")
 		for {
 			event, ok := <-cceventch
 			if !ok {
 				//test.Failf(t, "unexpected closed channel while waiting for Tx Status event")
 				continue
 			}
-			fmt.Printf("Received chaincode event: %#v", event)
+			//fmt.Printf("Received chaincode event: %#v", event)
 			if event.ChaincodeID != chainCodeID {
 				//test.Failf(t, "Expecting event for CC ID [%s] but got event for CC ID [%s]", chainCodeID, event.ChaincodeID)
 				continue
@@ -119,6 +120,7 @@ func main() {
 				//test.Failf(t, "Expecting non-zero block number")
 				continue
 			}
+			fmt.Println(event.ChaincodeID, event.TxID)
 		}
 	}()
 
