@@ -3,40 +3,6 @@ module github.com/MHBauer/fabric-watcher
 go 1.13
 
 require (
-	github.com/beorn7/perks v1.0.1
-	github.com/cloudflare/cfssl v0.0.0-20180223231731-4e2dcbde5004
-	github.com/davecgh/go-spew v1.1.1
-	github.com/fsnotify/fsnotify v1.4.7
-	github.com/go-kit/kit v0.8.0
-	github.com/go-logfmt/logfmt v0.4.0
-	github.com/golang/mock v1.3.2-0.20190713102442-dd8d2a22370e
-	github.com/golang/protobuf v1.3.2
-	github.com/google/certificate-transparency-go v1.0.10-0.20180222191210-5ab67e519c93
-	github.com/hashicorp/hcl v1.0.0
-	github.com/hyperledger/fabric-lib-go v1.0.0
-	github.com/hyperledger/fabric-sdk-go v1.0.0-alpha5
-	github.com/kr/logfmt v0.0.0-20140226030751-b84e30acd515
-	github.com/magiconair/properties v1.8.1
-	github.com/matttproud/golang_protobuf_extensions v1.0.1
-	github.com/mitchellh/mapstructure v1.1.2
-	github.com/pelletier/go-toml v1.4.0
+	github.com/hyperledger/fabric-sdk-go v1.0.0-beta1
 	github.com/pkg/errors v0.8.1
-	github.com/pmezard/go-difflib v1.0.0
-	github.com/prometheus/client_golang v0.8.0
-	github.com/prometheus/client_model v0.0.0-20190812154241-14fe0d1b01d4
-	github.com/prometheus/common v0.0.0-20180518154759-7600349dcfe1
-	github.com/prometheus/procfs v0.0.4
-	github.com/spf13/afero v1.2.2
-	github.com/spf13/cast v1.3.0
-	github.com/spf13/jwalterweatherman v1.1.0
-	github.com/spf13/pflag v1.0.3
-	github.com/spf13/viper v1.0.1-0.20171227194143-aafc9e6bc7b7
-	github.com/stretchr/testify v1.4.0
-	golang.org/x/crypto v0.0.0-20190909091759-094676da4a83
-	golang.org/x/net v0.0.0-20190404232315-eb5bcb51f2a3
-	golang.org/x/sys v0.0.0-20190909082730-f460065e899a
-	golang.org/x/text v0.3.2
-	google.golang.org/genproto v0.0.0-20190905072037-92dd089d5514
-	google.golang.org/grpc v1.23.0
-	gopkg.in/yaml.v2 v2.2.2
 )
